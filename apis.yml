@@ -1,0 +1,34 @@
+aid: apache-samza
+name: Apache Samza
+description: >-
+  Apache Samza is a distributed stream processing framework that provides a simple API for building stateful stream processing applications. It integrates with Apache Kafka for messaging and supports both stream and batch processing.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Stream Processing
+  - Kafka
+  - Stateful Processing
+  - Big Data
+created: '2026-03-16'
+modified: '2026-03-16'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: apache-samza:apache-samza
+    name: Apache Samza
+    description: >-
+      Samza provides a high-level Streams API and low-level Task API in Java/Scala for stateful stream processing, with a REST API for job management and integration with Kafka, HDFS, and other data systems.
+    humanURL: https://samza.apache.org/learn/documentation/latest/
+    tags:
+      - Java
+      - Stream Processing
+      - Kafka
+    properties:
+      - type: Documentation
+        url: https://samza.apache.org/learn/documentation/latest/
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
