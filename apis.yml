@@ -7,10 +7,10 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Stream Processing
+  - Big Data
   - Kafka
   - Stateful Processing
-  - Big Data
+  - Stream Processing
 created: '2026-03-16'
 modified: '2026-03-16'
 url: >-
@@ -24,8 +24,8 @@ apis:
     humanURL: https://samza.apache.org/learn/documentation/latest/
     tags:
       - Java
-      - Stream Processing
       - Kafka
+      - Stream Processing
     properties:
       - type: Documentation
         url: https://samza.apache.org/learn/documentation/latest/
