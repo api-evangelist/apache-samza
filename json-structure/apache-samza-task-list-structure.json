@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/json-structure/apache-samza-task-list-structure.json",
+  "description": "List of Samza tasks",
+  "type": "object",
+  "properties": {
+    "tasks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Task"
+      }
+    }
+  },
+  "name": "TaskList"
+}

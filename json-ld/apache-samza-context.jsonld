@@ -1,0 +1,84 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "samz": "https://samza.apache.org/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "JobList": "samz:JobList",
+    "Job": "samz:Job",
+    "JobStatus": "samz:JobStatus",
+    "TaskList": "samz:TaskList",
+    "Task": "samz:Task",
+    "Partition": "samz:Partition",
+    "CheckpointList": "samz:CheckpointList",
+    "Checkpoint": "samz:Checkpoint",
+    "jobs": {
+      "@id": "samz:jobs",
+      "@container": "@set"
+    },
+    "jobName": {
+      "@id": "samz:jobName",
+      "@type": "xsd:string"
+    },
+    "jobId": {
+      "@id": "samz:jobId",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "samz:status",
+      "@type": "xsd:string"
+    },
+    "containersCount": {
+      "@id": "samz:containersCount",
+      "@type": "xsd:integer"
+    },
+    "taskCount": {
+      "@id": "samz:taskCount",
+      "@type": "xsd:integer"
+    },
+    "message": {
+      "@id": "samz:message",
+      "@type": "xsd:string"
+    },
+    "tasks": {
+      "@id": "samz:tasks",
+      "@container": "@set"
+    },
+    "taskName": {
+      "@id": "samz:taskName",
+      "@type": "xsd:string"
+    },
+    "containerId": {
+      "@id": "samz:containerId",
+      "@type": "xsd:string"
+    },
+    "partitions": {
+      "@id": "samz:partitions",
+      "@container": "@set"
+    },
+    "systemName": {
+      "@id": "samz:systemName",
+      "@type": "xsd:string"
+    },
+    "stream": {
+      "@id": "samz:stream",
+      "@type": "xsd:string"
+    },
+    "partitionId": {
+      "@id": "samz:partitionId",
+      "@type": "xsd:integer"
+    },
+    "checkpoints": {
+      "@id": "samz:checkpoints",
+      "@container": "@set"
+    },
+    "systemStreamPartition": {
+      "@id": "samz:systemStreamPartition",
+      "@type": "xsd:string"
+    },
+    "offset": {
+      "@id": "samz:offset",
+      "@type": "xsd:string"
+    }
+  }
+}

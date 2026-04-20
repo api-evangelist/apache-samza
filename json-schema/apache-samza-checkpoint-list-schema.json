@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/json-schema/apache-samza-checkpoint-list-schema.json",
+  "title": "CheckpointList",
+  "description": "List of checkpoints for a job",
+  "type": "object",
+  "properties": {
+    "checkpoints": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Checkpoint"
+      }
+    }
+  }
+}

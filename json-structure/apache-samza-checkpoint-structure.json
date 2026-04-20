@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/json-structure/apache-samza-checkpoint-structure.json",
+  "description": "Checkpoint for a Samza task",
+  "type": "object",
+  "properties": {
+    "taskName": {
+      "type": "string",
+      "description": "Task name"
+    },
+    "systemStreamPartition": {
+      "type": "string",
+      "description": "System stream partition identifier"
+    },
+    "offset": {
+      "type": "string",
+      "description": "Checkpoint offset value"
+    }
+  },
+  "name": "Checkpoint"
+}

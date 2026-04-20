@@ -1,0 +1,5 @@
+{
+  "systemName": "example-name",
+  "stream": "example",
+  "partitionId": 1234
+}

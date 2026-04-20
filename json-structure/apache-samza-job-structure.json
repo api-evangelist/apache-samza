@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/json-structure/apache-samza-job-structure.json",
+  "description": "Samza stream processing job",
+  "type": "object",
+  "properties": {
+    "jobName": {
+      "type": "string",
+      "description": "Job name"
+    },
+    "jobId": {
+      "type": "string",
+      "description": "Job identifier"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "STARTED",
+        "STOPPED",
+        "NEW",
+        "STARTING",
+        "STOPPING",
+        "RESTARTING",
+        "UNKNOWN"
+      ],
+      "description": "Current job status"
+    },
+    "containersCount": {
+      "type": "int32",
+      "description": "Number of containers running"
+    },
+    "taskCount": {
+      "type": "int32",
+      "description": "Total task count"
+    }
+  },
+  "name": "Job"
+}

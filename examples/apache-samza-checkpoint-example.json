@@ -1,0 +1,5 @@
+{
+  "taskName": "example-name",
+  "systemStreamPartition": "example",
+  "offset": "example"
+}

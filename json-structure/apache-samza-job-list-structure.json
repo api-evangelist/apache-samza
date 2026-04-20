@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/json-structure/apache-samza-job-list-structure.json",
+  "description": "List of Samza jobs",
+  "type": "object",
+  "properties": {
+    "jobs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Job"
+      }
+    }
+  },
+  "name": "JobList"
+}

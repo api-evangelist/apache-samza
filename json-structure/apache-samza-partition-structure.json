@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/json-structure/apache-samza-partition-structure.json",
+  "description": "Stream partition assigned to a task",
+  "type": "object",
+  "properties": {
+    "systemName": {
+      "type": "string",
+      "description": "System name (e.g. kafka)"
+    },
+    "stream": {
+      "type": "string",
+      "description": "Stream/topic name"
+    },
+    "partitionId": {
+      "type": "int32",
+      "description": "Partition number"
+    }
+  },
+  "name": "Partition"
+}

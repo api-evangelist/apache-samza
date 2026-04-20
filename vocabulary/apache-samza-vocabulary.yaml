@@ -1,0 +1,49 @@
+name: Apache Samza Vocabulary
+description: Unified taxonomy mapping stream processing resources, actions, workflows, and personas for Apache Samza.
+version: 1.0.0
+operational:
+  apis:
+    - name: Apache Samza REST API
+      description: REST API for managing Samza stream processing jobs
+  resources:
+    - name: Job
+      description: Samza stream processing job definition and execution
+    - name: Task
+      description: Processing unit within a Samza job
+    - name: Container
+      description: Yarn container running Samza tasks
+    - name: Checkpoint
+      description: Offset checkpoint for fault-tolerant stream processing
+    - name: Partition
+      description: Stream partition assigned to a task
+  actions:
+    - name: Start
+      description: Start a stream processing job
+    - name: Stop
+      description: Stop a running job
+    - name: Monitor
+      description: Monitor job and task status
+    - name: Checkpoint
+      description: Record and restore processing checkpoints
+  authentication:
+    - name: None
+      description: Authentication delegated to Hadoop/YARN
+capability:
+  workflows:
+    - name: Job Management Workflow
+      description: Lifecycle management of Samza stream processing jobs
+  personas:
+    - name: Data Engineer
+      description: Engineer building and operating stream processing pipelines
+    - name: Platform Engineer
+      description: Engineer managing YARN/Samza infrastructure
+  domains:
+    - name: Stream Processing
+      description: Real-time stream processing on distributed infrastructure
+  crossReference:
+    - name: Apache Kafka
+      description: Messaging backbone for Samza streams
+    - name: Apache Flink
+      description: Alternative stateful stream processing framework
+    - name: Apache Spark Streaming
+      description: Micro-batch stream processing alternative

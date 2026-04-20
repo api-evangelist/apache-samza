@@ -1,0 +1,8 @@
+{
+  "taskName": "example-name",
+  "containerId": "500123",
+  "status": "active",
+  "partitions": [
+    {}
+  ]
+}

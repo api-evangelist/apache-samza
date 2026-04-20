@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/json-structure/apache-samza-task-structure.json",
+  "description": "Samza task within a container",
+  "type": "object",
+  "properties": {
+    "taskName": {
+      "type": "string",
+      "description": "Task name"
+    },
+    "containerId": {
+      "type": "string",
+      "description": "Container the task runs on"
+    },
+    "status": {
+      "type": "string",
+      "description": "Task status"
+    },
+    "partitions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Partition"
+      }
+    }
+  },
+  "name": "Task"
+}

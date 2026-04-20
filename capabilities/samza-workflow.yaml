@@ -1,0 +1,63 @@
+name: Apache Samza Stream Processing Workflow
+description: Workflow capability for managing and monitoring Samza stream processing jobs.
+version: 1.0.0-alpha1
+apis:
+  - name: Apache Samza REST API
+    url: https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/apis.yml
+shared:
+  - url: capabilities/shared/samza-api.yaml
+workflow:
+  name: samza-workflow
+  description: Manage Samza stream processing jobs and monitor task health.
+  steps:
+    - name: list-jobs
+      description: List stream processing jobs
+      api: Apache Samza REST API
+      operation: listJobs
+    - name: start-job
+      description: Start a stream processing job
+      api: Apache Samza REST API
+      operation: startJob
+    - name: list-tasks
+      description: Monitor job tasks
+      api: Apache Samza REST API
+      operation: listTasks
+    - name: get-checkpoints
+      description: Review job checkpoints
+      api: Apache Samza REST API
+      operation: getCheckpoints
+    - name: stop-job
+      description: Stop a stream processing job
+      api: Apache Samza REST API
+      operation: stopJob
+exposes:
+  - type: rest
+    port: 8080
+    paths:
+      - /jobs
+      - /jobs/{jobName}/{jobId}
+      - /jobs/{jobName}/{jobId}/start
+      - /jobs/{jobName}/{jobId}/stop
+      - /jobs/{jobName}/{jobId}/tasks
+      - /jobs/{jobName}/{jobId}/checkpoints
+  - type: mcp
+    port: 9090
+    tools:
+      - name: list-jobs
+        description: List Samza jobs
+        operation: listJobs
+      - name: get-job
+        description: Get job details
+        operation: getJob
+      - name: start-job
+        description: Start a job
+        operation: startJob
+      - name: stop-job
+        description: Stop a job
+        operation: stopJob
+      - name: list-tasks
+        description: List job tasks
+        operation: listTasks
+      - name: get-checkpoints
+        description: Get job checkpoints
+        operation: getCheckpoints

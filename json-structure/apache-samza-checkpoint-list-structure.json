@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/json-structure/apache-samza-checkpoint-list-structure.json",
+  "description": "List of checkpoints for a job",
+  "type": "object",
+  "properties": {
+    "checkpoints": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Checkpoint"
+      }
+    }
+  },
+  "name": "CheckpointList"
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/json-schema/apache-samza-job-status-schema.json",
+  "title": "JobStatus",
+  "description": "Job status response",
+  "type": "object",
+  "properties": {
+    "jobName": {
+      "type": "string"
+    },
+    "jobId": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "STARTED",
+        "STOPPED",
+        "NEW",
+        "STARTING",
+        "STOPPING",
+        "RESTARTING",
+        "UNKNOWN"
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}

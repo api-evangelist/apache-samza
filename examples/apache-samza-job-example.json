@@ -1,0 +1,7 @@
+{
+  "jobName": "example-name",
+  "jobId": "500123",
+  "status": "STARTED",
+  "containersCount": 1234,
+  "taskCount": 1234
+}
