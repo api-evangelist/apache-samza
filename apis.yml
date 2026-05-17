@@ -53,7 +53,7 @@ common:
   url: vocabulary/apache-samza-vocabulary.yaml
 - type: NaftikoCapability
   url: capabilities/samza-workflow.yaml
-- type: JSON-LD
+- type: JSONLD
   url: json-ld/apache-samza-context.jsonld
 - type: Features
   data:
