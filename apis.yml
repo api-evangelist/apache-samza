@@ -1,8 +1,7 @@
 aid: apache-samza
 name: Apache Samza
-description: >-
-  Apache Samza is a distributed stream processing framework that provides a simple API for building stateful stream processing applications. It integrates with Apache Kafka for messaging and supports both
-  stream and batch processing.
+description: Apache Samza is a distributed stream processing framework that provides a simple API for building stateful stream
+  processing applications. It integrates with Apache Kafka for messaging and supports both stream and batch processing.
 type: Index
 position: Consumer
 access: 3rd-Party
@@ -16,15 +15,14 @@ tags:
 - Apache
 - Open Source
 created: '2026-03-16'
-modified: '2026-04-19'
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/apis.yml
+modified: '2026-05-19'
+url: https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
 - aid: apache-samza:apache-samza
   name: Apache Samza
-  description: >-
-    Samza provides a high-level Streams API and low-level Task API in Java/Scala for stateful stream processing, with a REST API for job management and integration with Kafka, HDFS, and other data systems.
+  description: Samza provides a high-level Streams API and low-level Task API in Java/Scala for stateful stream processing,
+    with a REST API for job management and integration with Kafka, HDFS, and other data systems.
   humanURL: https://samza.apache.org/learn/documentation/latest/
   tags:
   - Job Management
@@ -39,6 +37,12 @@ apis:
     url: https://samza.apache.org/learn/documentation/
   - type: OpenAPI
     url: openapi/apache-samza-rest-api.yaml
+  - type: NaftikoCapability
+    url: capabilities/rest-checkpoints.yaml
+  - type: NaftikoCapability
+    url: capabilities/rest-jobs.yaml
+  - type: NaftikoCapability
+    url: capabilities/rest-tasks.yaml
 maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
@@ -51,8 +55,6 @@ common:
   url: rules/apache-samza-spectral-rules.yml
 - type: Vocabulary
   url: vocabulary/apache-samza-vocabulary.yaml
-- type: NaftikoCapability
-  url: capabilities/samza-workflow.yaml
 - type: JSONLD
   url: json-ld/apache-samza-context.jsonld
 - type: Features

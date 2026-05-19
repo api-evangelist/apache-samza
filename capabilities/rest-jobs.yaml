@@ -1,0 +1,208 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache Samza REST API — Jobs
+  description: 'Apache Samza REST API — Jobs. 4 operations. Lead operation: Apache Samza List Jobs. Self-contained Naftiko
+    capability covering one Apache Samza business surface.'
+  tags:
+  - Apache Samza
+  - Jobs
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_SAMZA_API_KEY: APACHE_SAMZA_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: rest-jobs
+    baseUri: https://samza.example.com/v1
+    description: Apache Samza REST API — Jobs business capability. Self-contained, no shared references.
+    resources:
+    - name: jobs
+      path: /jobs
+      operations:
+      - name: listjobs
+        method: GET
+        description: Apache Samza List Jobs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: jobs-jobName-jobId
+      path: /jobs/{jobName}/{jobId}
+      operations:
+      - name: getjob
+        method: GET
+        description: Apache Samza Get Job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: jobName
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+    - name: jobs-jobName-jobId-start
+      path: /jobs/{jobName}/{jobId}/start
+      operations:
+      - name: startjob
+        method: PUT
+        description: Apache Samza Start Job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: jobName
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+    - name: jobs-jobName-jobId-stop
+      path: /jobs/{jobName}/{jobId}/stop
+      operations:
+      - name: stopjob
+        method: PUT
+        description: Apache Samza Stop Job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: jobName
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: rest-jobs-rest
+    port: 8080
+    description: REST adapter for Apache Samza REST API — Jobs. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/jobs
+      name: jobs
+      description: REST surface for jobs.
+      operations:
+      - method: GET
+        name: listjobs
+        description: Apache Samza List Jobs
+        call: rest-jobs.listjobs
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/jobs/{jobname}/{jobid}
+      name: jobs-jobname-jobid
+      description: REST surface for jobs-jobName-jobId.
+      operations:
+      - method: GET
+        name: getjob
+        description: Apache Samza Get Job
+        call: rest-jobs.getjob
+        with:
+          jobName: rest.jobName
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/jobs/{jobname}/{jobid}/start
+      name: jobs-jobname-jobid-start
+      description: REST surface for jobs-jobName-jobId-start.
+      operations:
+      - method: PUT
+        name: startjob
+        description: Apache Samza Start Job
+        call: rest-jobs.startjob
+        with:
+          jobName: rest.jobName
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/jobs/{jobname}/{jobid}/stop
+      name: jobs-jobname-jobid-stop
+      description: REST surface for jobs-jobName-jobId-stop.
+      operations:
+      - method: PUT
+        name: stopjob
+        description: Apache Samza Stop Job
+        call: rest-jobs.stopjob
+        with:
+          jobName: rest.jobName
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: rest-jobs-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache Samza REST API — Jobs. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: apache-samza-list-jobs
+      description: Apache Samza List Jobs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: rest-jobs.listjobs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apache-samza-get-job
+      description: Apache Samza Get Job
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: rest-jobs.getjob
+      with:
+        jobName: tools.jobName
+        jobId: tools.jobId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apache-samza-start-job
+      description: Apache Samza Start Job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: rest-jobs.startjob
+      with:
+        jobName: tools.jobName
+        jobId: tools.jobId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apache-samza-stop-job
+      description: Apache Samza Stop Job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: rest-jobs.stopjob
+      with:
+        jobName: tools.jobName
+        jobId: tools.jobId
+      outputParameters:
+      - type: object
+        mapping: $.

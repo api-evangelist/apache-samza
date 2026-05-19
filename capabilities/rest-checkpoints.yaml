@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache Samza REST API — Checkpoints
+  description: 'Apache Samza REST API — Checkpoints. 1 operations. Lead operation: Apache Samza Get Checkpoints. Self-contained
+    Naftiko capability covering one Apache Samza business surface.'
+  tags:
+  - Apache Samza
+  - Checkpoints
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_SAMZA_API_KEY: APACHE_SAMZA_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: rest-checkpoints
+    baseUri: https://samza.example.com/v1
+    description: Apache Samza REST API — Checkpoints business capability. Self-contained, no shared references.
+    resources:
+    - name: jobs-jobName-jobId-checkpoints
+      path: /jobs/{jobName}/{jobId}/checkpoints
+      operations:
+      - name: getcheckpoints
+        method: GET
+        description: Apache Samza Get Checkpoints
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: jobName
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: rest-checkpoints-rest
+    port: 8080
+    description: REST adapter for Apache Samza REST API — Checkpoints. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/jobs/{jobname}/{jobid}/checkpoints
+      name: jobs-jobname-jobid-checkpoints
+      description: REST surface for jobs-jobName-jobId-checkpoints.
+      operations:
+      - method: GET
+        name: getcheckpoints
+        description: Apache Samza Get Checkpoints
+        call: rest-checkpoints.getcheckpoints
+        with:
+          jobName: rest.jobName
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: rest-checkpoints-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache Samza REST API — Checkpoints. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: apache-samza-get-checkpoints
+      description: Apache Samza Get Checkpoints
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: rest-checkpoints.getcheckpoints
+      with:
+        jobName: tools.jobName
+        jobId: tools.jobId
+      outputParameters:
+      - type: object
+        mapping: $.
