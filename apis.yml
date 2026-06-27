@@ -37,11 +37,11 @@ apis:
     url: https://samza.apache.org/learn/documentation/
   - type: OpenAPI
     url: openapi/apache-samza-rest-api.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/rest-checkpoints.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/rest-jobs.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/rest-tasks.yaml
 maintainers:
 - FN: Kin Lane
