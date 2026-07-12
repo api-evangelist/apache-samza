@@ -47,6 +47,10 @@ maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
 common:
+- type: VulnerabilityDisclosure
+  url: security/apache-samza-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/apache-samza-domain-security.yml
 - type: GitHubOrganization
   url: https://github.com/apache/samza
 - type: Documentation
@@ -91,3 +95,5 @@ common:
     description: HDFS integration for checkpoint storage
   - name: RocksDB
     description: Embedded state store for local stateful processing
+- type: Blog
+  url: https://samza.apache.org/blog/
