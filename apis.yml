@@ -47,6 +47,8 @@ maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
 common:
+- type: AgenticAccess
+  url: agentic-access/apache-samza-agentic-access.yml
 - type: VulnerabilityDisclosure
   url: security/apache-samza-vulnerability-disclosure.yml
 - type: DomainSecurity
