@@ -1,0 +1,85 @@
+openapi: 3.0.3
+info:
+  title: Apache Samza REST Checkpoints Tasks API
+  description: Apache Samza is a distributed stream processing framework built on top of Apache Kafka and YARN. This API provides REST endpoints for job management, task monitoring, and checkpoint management.
+  version: 1.8.0
+  contact:
+    name: Apache Samza
+    url: https://samza.apache.org/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://samza.example.com/v1
+  description: Apache Samza REST API
+tags:
+- name: Tasks
+paths:
+  /jobs/{jobName}/{jobId}/tasks:
+    get:
+      operationId: listTasks
+      summary: Apache Samza List Tasks
+      description: List all tasks for a specific Samza job.
+      tags:
+      - Tasks
+      x-microcks-operation:
+        dispatcher: URI_PARTS
+        dispatcherRules: jobName && jobId
+      parameters:
+      - name: jobName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of tasks
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+components:
+  schemas:
+    TaskList:
+      type: object
+      description: List of Samza tasks
+      properties:
+        tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Task'
+    Task:
+      type: object
+      description: Samza task within a container
+      properties:
+        taskName:
+          type: string
+          description: Task name
+        containerId:
+          type: string
+          description: Container the task runs on
+        status:
+          type: string
+          description: Task status
+        partitions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Partition'
+    Partition:
+      type: object
+      description: Stream partition assigned to a task
+      properties:
+        systemName:
+          type: string
+          description: System name (e.g. kafka)
+        stream:
+          type: string
+          description: Stream/topic name
+        partitionId:
+          type: integer
+          description: Partition number

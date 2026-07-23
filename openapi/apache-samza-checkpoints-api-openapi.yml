@@ -1,0 +1,68 @@
+openapi: 3.0.3
+info:
+  title: Apache Samza REST Checkpoints API
+  description: Apache Samza is a distributed stream processing framework built on top of Apache Kafka and YARN. This API provides REST endpoints for job management, task monitoring, and checkpoint management.
+  version: 1.8.0
+  contact:
+    name: Apache Samza
+    url: https://samza.apache.org/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://samza.example.com/v1
+  description: Apache Samza REST API
+tags:
+- name: Checkpoints
+paths:
+  /jobs/{jobName}/{jobId}/checkpoints:
+    get:
+      operationId: getCheckpoints
+      summary: Apache Samza Get Checkpoints
+      description: Retrieve checkpoint information for a Samza job.
+      tags:
+      - Checkpoints
+      x-microcks-operation:
+        dispatcher: URI_PARTS
+        dispatcherRules: jobName && jobId
+      parameters:
+      - name: jobName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Checkpoint data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckpointList'
+components:
+  schemas:
+    Checkpoint:
+      type: object
+      description: Checkpoint for a Samza task
+      properties:
+        taskName:
+          type: string
+          description: Task name
+        systemStreamPartition:
+          type: string
+          description: System stream partition identifier
+        offset:
+          type: string
+          description: Checkpoint offset value
+    CheckpointList:
+      type: object
+      description: List of checkpoints for a job
+      properties:
+        checkpoints:
+          type: array
+          items:
+            $ref: '#/components/schemas/Checkpoint'

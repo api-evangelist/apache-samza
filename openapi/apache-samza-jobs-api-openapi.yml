@@ -1,0 +1,174 @@
+openapi: 3.0.3
+info:
+  title: Apache Samza REST Checkpoints Jobs API
+  description: Apache Samza is a distributed stream processing framework built on top of Apache Kafka and YARN. This API provides REST endpoints for job management, task monitoring, and checkpoint management.
+  version: 1.8.0
+  contact:
+    name: Apache Samza
+    url: https://samza.apache.org/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://samza.example.com/v1
+  description: Apache Samza REST API
+tags:
+- name: Jobs
+paths:
+  /jobs:
+    get:
+      operationId: listJobs
+      summary: Apache Samza List Jobs
+      description: List all Samza stream processing jobs.
+      tags:
+      - Jobs
+      x-microcks-operation:
+        dispatcher: RANDOM
+      responses:
+        '200':
+          description: List of jobs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobList'
+  /jobs/{jobName}/{jobId}:
+    get:
+      operationId: getJob
+      summary: Apache Samza Get Job
+      description: Get the status and configuration of a specific Samza job.
+      tags:
+      - Jobs
+      x-microcks-operation:
+        dispatcher: URI_PARTS
+        dispatcherRules: jobName && jobId
+      parameters:
+      - name: jobName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Job details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+  /jobs/{jobName}/{jobId}/start:
+    put:
+      operationId: startJob
+      summary: Apache Samza Start Job
+      description: Start a Samza stream processing job.
+      tags:
+      - Jobs
+      x-microcks-operation:
+        dispatcher: URI_PARTS
+        dispatcherRules: jobName && jobId
+      parameters:
+      - name: jobName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Job started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobStatus'
+  /jobs/{jobName}/{jobId}/stop:
+    put:
+      operationId: stopJob
+      summary: Apache Samza Stop Job
+      description: Stop a running Samza stream processing job.
+      tags:
+      - Jobs
+      x-microcks-operation:
+        dispatcher: URI_PARTS
+        dispatcherRules: jobName && jobId
+      parameters:
+      - name: jobName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Job stopped
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobStatus'
+components:
+  schemas:
+    Job:
+      type: object
+      description: Samza stream processing job
+      properties:
+        jobName:
+          type: string
+          description: Job name
+        jobId:
+          type: string
+          description: Job identifier
+        status:
+          type: string
+          enum:
+          - STARTED
+          - STOPPED
+          - NEW
+          - STARTING
+          - STOPPING
+          - RESTARTING
+          - UNKNOWN
+          description: Current job status
+        containersCount:
+          type: integer
+          description: Number of containers running
+        taskCount:
+          type: integer
+          description: Total task count
+    JobStatus:
+      type: object
+      description: Job status response
+      properties:
+        jobName:
+          type: string
+        jobId:
+          type: string
+        status:
+          type: string
+          enum:
+          - STARTED
+          - STOPPED
+          - NEW
+          - STARTING
+          - STOPPING
+          - RESTARTING
+          - UNKNOWN
+        message:
+          type: string
+    JobList:
+      type: object
+      description: List of Samza jobs
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
