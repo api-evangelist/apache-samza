@@ -3,9 +3,21 @@ name: Apache Samza
 description: Apache Samza is a distributed stream processing framework that provides a simple API for building stateful stream
   processing applications. It integrates with Apache Kafka for messaging and supports both stream and batch processing.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apache-samza.png
 tags:
 - Big Data
 - Hadoop
@@ -19,24 +31,57 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-- aid: apache-samza:apache-samza
-  name: Apache Samza
-  description: Samza provides a high-level Streams API and low-level Task API in Java/Scala for stateful stream processing,
-    with a REST API for job management and integration with Kafka, HDFS, and other data systems.
+- aid: apache-samza:apache-samza-checkpoints-api
+  name: Apache Samza Checkpoints API
+  description: The Checkpoints API from Apache Samza — 1 operation(s) for checkpoints.
   humanURL: https://samza.apache.org/learn/documentation/latest/
   tags:
-  - Job Management
-  - REST
-  - Stream Processing
-  - Apache
-  - Open Source
+  - Checkpoints
   properties:
+  - type: OpenAPI
+    url: openapi/apache-samza-checkpoints-api-openapi.yml
   - type: Documentation
     url: https://samza.apache.org/learn/documentation/latest/
   - type: Documentation
     url: https://samza.apache.org/learn/documentation/
+  - type: X-NaftikoCapability
+    url: capabilities/rest-checkpoints.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/rest-jobs.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/rest-tasks.yaml
+- aid: apache-samza:apache-samza-jobs-api
+  name: Apache Samza Jobs API
+  description: The Jobs API from Apache Samza — 4 operation(s) for jobs.
+  humanURL: https://samza.apache.org/learn/documentation/latest/
+  tags:
+  - Jobs
+  properties:
   - type: OpenAPI
-    url: openapi/apache-samza-rest-api.yaml
+    url: openapi/apache-samza-jobs-api-openapi.yml
+  - type: Documentation
+    url: https://samza.apache.org/learn/documentation/latest/
+  - type: Documentation
+    url: https://samza.apache.org/learn/documentation/
+  - type: X-NaftikoCapability
+    url: capabilities/rest-checkpoints.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/rest-jobs.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/rest-tasks.yaml
+- aid: apache-samza:apache-samza-tasks-api
+  name: Apache Samza Tasks API
+  description: The Tasks API from Apache Samza — 1 operation(s) for tasks.
+  humanURL: https://samza.apache.org/learn/documentation/latest/
+  tags:
+  - Tasks
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-samza-tasks-api-openapi.yml
+  - type: Documentation
+    url: https://samza.apache.org/learn/documentation/latest/
+  - type: Documentation
+    url: https://samza.apache.org/learn/documentation/
   - type: X-NaftikoCapability
     url: capabilities/rest-checkpoints.yaml
   - type: X-NaftikoCapability
