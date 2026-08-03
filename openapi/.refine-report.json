@@ -1,0 +1,18 @@
+{
+  "provider": "apache-samza",
+  "sources": [
+    "apache-samza-checkpoints-api-openapi.yml",
+    "apache-samza-jobs-api-openapi.yml",
+    "apache-samza-tasks-api-openapi.yml"
+  ],
+  "outputs": [
+    "apache-samza-checkpoints-api-openapi.yml",
+    "apache-samza-jobs-api-openapi.yml",
+    "apache-samza-tasks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
