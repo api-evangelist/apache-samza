@@ -44,12 +44,6 @@ apis:
     url: https://samza.apache.org/learn/documentation/latest/
   - type: Documentation
     url: https://samza.apache.org/learn/documentation/
-  - type: X-NaftikoCapability
-    url: capabilities/rest-checkpoints.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-jobs.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-tasks.yaml
 - aid: apache-samza:apache-samza-jobs-api
   name: Apache Samza Jobs API
   description: The Jobs API from Apache Samza — 4 operation(s) for jobs.
@@ -63,12 +57,6 @@ apis:
     url: https://samza.apache.org/learn/documentation/latest/
   - type: Documentation
     url: https://samza.apache.org/learn/documentation/
-  - type: X-NaftikoCapability
-    url: capabilities/rest-checkpoints.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-jobs.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-tasks.yaml
 - aid: apache-samza:apache-samza-tasks-api
   name: Apache Samza Tasks API
   description: The Tasks API from Apache Samza — 1 operation(s) for tasks.
@@ -82,12 +70,6 @@ apis:
     url: https://samza.apache.org/learn/documentation/latest/
   - type: Documentation
     url: https://samza.apache.org/learn/documentation/
-  - type: X-NaftikoCapability
-    url: capabilities/rest-checkpoints.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-jobs.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-tasks.yaml
 maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
