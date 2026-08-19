@@ -1,0 +1,138 @@
+{
+  "item": [
+    {
+      "id": "2f2329d9-5c9d-445e-8f11-dee4405c449b",
+      "name": "Tasks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "056df066-b595-4ece-b193-088a0bc38fff",
+          "name": "Apache Samza List Tasks",
+          "request": {
+            "name": "Apache Samza List Tasks",
+            "description": {
+              "content": "List all tasks for a specific Samza job.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jobs",
+                ":jobName",
+                ":jobId",
+                "tasks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "260ff306-749f-48c7-8e20-cc467671563c",
+              "name": "List of tasks",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jobs",
+                    ":jobName",
+                    ":jobId",
+                    "tasks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tasks\": [\n    {\n      \"taskName\": \"string\",\n      \"containerId\": \"string\",\n      \"status\": \"string\",\n      \"partitions\": [\n        {\n          \"systemName\": \"string\",\n          \"stream\": \"string\",\n          \"partitionId\": 6983\n        },\n        {\n          \"systemName\": \"string\",\n          \"stream\": \"string\",\n          \"partitionId\": 5150\n        }\n      ]\n    },\n    {\n      \"taskName\": \"string\",\n      \"containerId\": \"string\",\n      \"status\": \"string\",\n      \"partitions\": [\n        {\n          \"systemName\": \"string\",\n          \"stream\": \"string\",\n          \"partitionId\": 8060\n        },\n        {\n          \"systemName\": \"string\",\n          \"stream\": \"string\",\n          \"partitionId\": 9845\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://samza.example.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "abc4e990-5e0d-43f3-8158-669aacc8a9de",
+    "name": "Apache Samza REST Checkpoints Tasks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache Samza is a distributed stream processing framework built on top of Apache Kafka and YARN. This API provides REST endpoints for job management, task monitoring, and checkpoint management.\n\nContact Support:\n Name: Apache Samza",
+      "type": "text/plain"
+    }
+  }
+}

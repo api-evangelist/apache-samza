@@ -1,0 +1,138 @@
+{
+  "item": [
+    {
+      "id": "c5d2c582-e3b5-4c99-af73-9da57c57da88",
+      "name": "Checkpoints",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fbb69170-6fc6-4355-92a9-563a0e5c6561",
+          "name": "Apache Samza Get Checkpoints",
+          "request": {
+            "name": "Apache Samza Get Checkpoints",
+            "description": {
+              "content": "Retrieve checkpoint information for a Samza job.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jobs",
+                ":jobName",
+                ":jobId",
+                "checkpoints"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0cd8ea0b-b788-431e-b927-ecdde8e903fa",
+              "name": "Checkpoint data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jobs",
+                    ":jobName",
+                    ":jobId",
+                    "checkpoints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"checkpoints\": [\n    {\n      \"taskName\": \"string\",\n      \"systemStreamPartition\": \"string\",\n      \"offset\": \"string\"\n    },\n    {\n      \"taskName\": \"string\",\n      \"systemStreamPartition\": \"string\",\n      \"offset\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://samza.example.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c8ca28e6-db09-49a2-a28a-61e7f80c3c7d",
+    "name": "Apache Samza REST Checkpoints API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache Samza is a distributed stream processing framework built on top of Apache Kafka and YARN. This API provides REST endpoints for job management, task monitoring, and checkpoint management.\n\nContact Support:\n Name: Apache Samza",
+      "type": "text/plain"
+    }
+  }
+}

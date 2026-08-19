@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Samza REST Checkpoints API",
+    "version": "1.8.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Checkpoints",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Samza Get Checkpoints",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://samza.example.com/v1/jobs/:jobName/:jobId/checkpoints",
+            "params": [
+              {
+                "name": "jobName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve checkpoint information for a Samza job."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

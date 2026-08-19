@@ -1,0 +1,98 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Samza REST Checkpoints Jobs API",
+    "version": "1.8.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Samza List Jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://samza.example.com/v1/jobs"
+          },
+          "docs": "List all Samza stream processing jobs."
+        },
+        {
+          "info": {
+            "name": "Apache Samza Get Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://samza.example.com/v1/jobs/:jobName/:jobId",
+            "params": [
+              {
+                "name": "jobName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get the status and configuration of a specific Samza job."
+        },
+        {
+          "info": {
+            "name": "Apache Samza Start Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://samza.example.com/v1/jobs/:jobName/:jobId/start",
+            "params": [
+              {
+                "name": "jobName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Start a Samza stream processing job."
+        },
+        {
+          "info": {
+            "name": "Apache Samza Stop Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://samza.example.com/v1/jobs/:jobName/:jobId/stop",
+            "params": [
+              {
+                "name": "jobName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Stop a running Samza stream processing job."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
