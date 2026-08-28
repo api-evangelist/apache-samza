@@ -3,6 +3,17 @@ name: Apache Samza
 description: Apache Samza is a distributed stream processing framework that provides a simple API for building stateful stream
   processing applications. It integrates with Apache Kafka for messaging and supports both stream and batch processing.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
