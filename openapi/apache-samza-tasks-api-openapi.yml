@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Apache Samza REST Checkpoints Tasks API
+  title: Apache Samza REST Tasks API
   description: Apache Samza is a distributed stream processing framework built on top of Apache Kafka and YARN. This API provides REST endpoints for job management, task monitoring, and checkpoint management.
   version: 1.8.0
   contact:
@@ -45,14 +45,19 @@ paths:
                 $ref: '#/components/schemas/TaskList'
 components:
   schemas:
-    TaskList:
+    Partition:
       type: object
-      description: List of Samza tasks
+      description: Stream partition assigned to a task
       properties:
-        tasks:
-          type: array
-          items:
-            $ref: '#/components/schemas/Task'
+        systemName:
+          type: string
+          description: System name (e.g. kafka)
+        stream:
+          type: string
+          description: Stream/topic name
+        partitionId:
+          type: integer
+          description: Partition number
     Task:
       type: object
       description: Samza task within a container
@@ -70,16 +75,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Partition'
-    Partition:
+    TaskList:
       type: object
-      description: Stream partition assigned to a task
+      description: List of Samza tasks
       properties:
-        systemName:
-          type: string
-          description: System name (e.g. kafka)
-        stream:
-          type: string
-          description: Stream/topic name
-        partitionId:
-          type: integer
-          description: Partition number
+        tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Task'

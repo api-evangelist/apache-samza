@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Apache Samza REST Checkpoints Jobs API
+  title: Apache Samza REST Jobs API
   description: Apache Samza is a distributed stream processing framework built on top of Apache Kafka and YARN. This API provides REST endpoints for job management, task monitoring, and checkpoint management.
   version: 1.8.0
   contact:
@@ -117,6 +117,14 @@ paths:
                 $ref: '#/components/schemas/JobStatus'
 components:
   schemas:
+    JobList:
+      type: object
+      description: List of Samza jobs
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
     Job:
       type: object
       description: Samza stream processing job
@@ -164,11 +172,3 @@ components:
           - UNKNOWN
         message:
           type: string
-    JobList:
-      type: object
-      description: List of Samza jobs
-      properties:
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/Job'
