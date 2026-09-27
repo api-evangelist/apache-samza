@@ -117,14 +117,6 @@ paths:
                 $ref: '#/components/schemas/JobStatus'
 components:
   schemas:
-    JobList:
-      type: object
-      description: List of Samza jobs
-      properties:
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/Job'
     Job:
       type: object
       description: Samza stream processing job
@@ -172,3 +164,11 @@ components:
           - UNKNOWN
         message:
           type: string
+    JobList:
+      type: object
+      description: List of Samza jobs
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
