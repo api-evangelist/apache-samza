@@ -45,19 +45,14 @@ paths:
                 $ref: '#/components/schemas/TaskList'
 components:
   schemas:
-    Partition:
+    TaskList:
       type: object
-      description: Stream partition assigned to a task
+      description: List of Samza tasks
       properties:
-        systemName:
-          type: string
-          description: System name (e.g. kafka)
-        stream:
-          type: string
-          description: Stream/topic name
-        partitionId:
-          type: integer
-          description: Partition number
+        tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Task'
     Task:
       type: object
       description: Samza task within a container
@@ -75,11 +70,16 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Partition'
-    TaskList:
+    Partition:
       type: object
-      description: List of Samza tasks
+      description: Stream partition assigned to a task
       properties:
-        tasks:
-          type: array
-          items:
-            $ref: '#/components/schemas/Task'
+        systemName:
+          type: string
+          description: System name (e.g. kafka)
+        stream:
+          type: string
+          description: Stream/topic name
+        partitionId:
+          type: integer
+          description: Partition number

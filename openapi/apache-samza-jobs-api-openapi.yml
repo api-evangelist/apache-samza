@@ -117,6 +117,26 @@ paths:
                 $ref: '#/components/schemas/JobStatus'
 components:
   schemas:
+    JobStatus:
+      type: object
+      description: Job status response
+      properties:
+        jobName:
+          type: string
+        jobId:
+          type: string
+        status:
+          type: string
+          enum:
+          - STARTED
+          - STOPPED
+          - NEW
+          - STARTING
+          - STOPPING
+          - RESTARTING
+          - UNKNOWN
+        message:
+          type: string
     Job:
       type: object
       description: Samza stream processing job
@@ -144,26 +164,6 @@ components:
         taskCount:
           type: integer
           description: Total task count
-    JobStatus:
-      type: object
-      description: Job status response
-      properties:
-        jobName:
-          type: string
-        jobId:
-          type: string
-        status:
-          type: string
-          enum:
-          - STARTED
-          - STOPPED
-          - NEW
-          - STARTING
-          - STOPPING
-          - RESTARTING
-          - UNKNOWN
-        message:
-          type: string
     JobList:
       type: object
       description: List of Samza jobs
