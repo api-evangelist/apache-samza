@@ -53,6 +53,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Task'
+    Partition:
+      type: object
+      description: Stream partition assigned to a task
+      properties:
+        systemName:
+          type: string
+          description: System name (e.g. kafka)
+        stream:
+          type: string
+          description: Stream/topic name
+        partitionId:
+          type: integer
+          description: Partition number
     Task:
       type: object
       description: Samza task within a container
@@ -70,16 +83,3 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Partition'
-    Partition:
-      type: object
-      description: Stream partition assigned to a task
-      properties:
-        systemName:
-          type: string
-          description: System name (e.g. kafka)
-        stream:
-          type: string
-          description: Stream/topic name
-        partitionId:
-          type: integer
-          description: Partition number
