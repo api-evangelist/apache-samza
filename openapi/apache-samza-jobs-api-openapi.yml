@@ -117,6 +117,14 @@ paths:
                 $ref: '#/components/schemas/JobStatus'
 components:
   schemas:
+    JobList:
+      type: object
+      description: List of Samza jobs
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
     JobStatus:
       type: object
       description: Job status response
@@ -164,11 +172,3 @@ components:
         taskCount:
           type: integer
           description: Total task count
-    JobList:
-      type: object
-      description: List of Samza jobs
-      properties:
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/Job'

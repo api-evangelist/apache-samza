@@ -45,6 +45,23 @@ paths:
                 $ref: '#/components/schemas/TaskList'
 components:
   schemas:
+    Task:
+      type: object
+      description: Samza task within a container
+      properties:
+        taskName:
+          type: string
+          description: Task name
+        containerId:
+          type: string
+          description: Container the task runs on
+        status:
+          type: string
+          description: Task status
+        partitions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Partition'
     TaskList:
       type: object
       description: List of Samza tasks
@@ -66,20 +83,3 @@ components:
         partitionId:
           type: integer
           description: Partition number
-    Task:
-      type: object
-      description: Samza task within a container
-      properties:
-        taskName:
-          type: string
-          description: Task name
-        containerId:
-          type: string
-          description: Container the task runs on
-        status:
-          type: string
-          description: Task status
-        partitions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Partition'
