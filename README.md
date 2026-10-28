@@ -1,4 +1,4 @@
-# Apache Samza (apache-samza)
+# Apache Samza
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,120 +66,177 @@
 
 Apache Samza is a distributed stream processing framework that provides a simple API for building stateful stream processing applications. It integrates with Apache Kafka for messaging and supports both stream and batch processing.
 
-**URL:** [https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/apache-samza/refs/heads/main/apis.yml)
+**Areas:** Big Data · Hadoop · Kafka · Stream Processing · Streaming · Apache · Open Source
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Apache Samza on APIs.io
 
-## Tags:
+Everything profiled for Apache Samza is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apache-samza/](https://apis.io/providers/apache-samza/)** — or go straight to one of the APIs or properties below.
 
- - Big Data, Hadoop, Kafka, Stream Processing, Streaming, Apache, Open Source
+### APIs (3)
 
-## Timestamps
+- [Apache Samza Checkpoints API](https://apis.io/apis/apache-samza/apache-samza-checkpoints-api/) — The Checkpoints API from Apache Samza — 1 operation(s) for checkpoints.
+- [Apache Samza Jobs API](https://apis.io/apis/apache-samza/apache-samza-jobs-api/) — The Jobs API from Apache Samza — 4 operation(s) for jobs.
+- [Apache Samza Tasks API](https://apis.io/apis/apache-samza/apache-samza-tasks-api/) — The Tasks API from Apache Samza — 1 operation(s) for tasks.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Apache Samza REST API
-Samza provides REST endpoints for job management, task monitoring, and checkpoint retrieval, along with high-level Streams API and SQL support for building stateful stream processing applications on Apache Kafka and YARN.
+#### Agentic access (1)
 
-**Human URL:** [https://samza.apache.org/learn/documentation/](https://samza.apache.org/learn/documentation/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Apache Samza Agentic Access](https://apis.io/agentic-access/apache-samza/apache-samza-agentic-access/)
 
- - Job Management, REST, Stream Processing, Apache, Open Source
+#### JSON Schema (8)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://samza.apache.org/learn/documentation/)
-- [OpenAPI](openapi/apache-samza-rest-api.yaml)
+- [Checkpoint](https://apis.io/schemas/apache-samza/apache-samza-checkpoint/)
+- [CheckpointList](https://apis.io/schemas/apache-samza/apache-samza-checkpoint-list/)
+- [Job](https://apis.io/schemas/apache-samza/apache-samza-job/)
+- [JobList](https://apis.io/schemas/apache-samza/apache-samza-job-list/)
+- [JobStatus](https://apis.io/schemas/apache-samza/apache-samza-job-status/)
+- [Partition](https://apis.io/schemas/apache-samza/apache-samza-partition/)
+- [Task](https://apis.io/schemas/apache-samza/apache-samza-task/)
+- [TaskList](https://apis.io/schemas/apache-samza/apache-samza-task-list/)
 
-## Common Properties
+#### JSON Structure (8)
 
-- [GitHubOrganization](https://github.com/apache/samza)
+Data models expressed in JSON Structure.
+
+- [Apache Samza Checkpoint List Structure](https://apis.io/json-structure/apache-samza/apache-samza-checkpoint-list-structure/)
+- [Apache Samza Checkpoint Structure](https://apis.io/json-structure/apache-samza/apache-samza-checkpoint-structure/)
+- [Apache Samza Job List Structure](https://apis.io/json-structure/apache-samza/apache-samza-job-list-structure/)
+- [Apache Samza Job Status Structure](https://apis.io/json-structure/apache-samza/apache-samza-job-status-structure/)
+- [Apache Samza Job Structure](https://apis.io/json-structure/apache-samza/apache-samza-job-structure/)
+- [Apache Samza Partition Structure](https://apis.io/json-structure/apache-samza/apache-samza-partition-structure/)
+- [Apache Samza Task List Structure](https://apis.io/json-structure/apache-samza/apache-samza-task-list-structure/)
+- [Apache Samza Task Structure](https://apis.io/json-structure/apache-samza/apache-samza-task-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apache Samza Context](https://apis.io/jsonld/apache-samza/apache-samza-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Apache Samza Vocabulary](https://apis.io/vocabularies/apache-samza/apache-samza-vocabulary/)
+
+#### Examples (8)
+
+Example requests and responses.
+
+- [Apache Samza Checkpoint Example](https://apis.io/examples/apache-samza/apache-samza-checkpoint-example/)
+- [Apache Samza Checkpoint List Example](https://apis.io/examples/apache-samza/apache-samza-checkpoint-list-example/)
+- [Apache Samza Job Example](https://apis.io/examples/apache-samza/apache-samza-job-example/)
+- [Apache Samza Job List Example](https://apis.io/examples/apache-samza/apache-samza-job-list-example/)
+- [Apache Samza Job Status Example](https://apis.io/examples/apache-samza/apache-samza-job-status-example/)
+- [Apache Samza Partition Example](https://apis.io/examples/apache-samza/apache-samza-partition-example/)
+- [Apache Samza Task Example](https://apis.io/examples/apache-samza/apache-samza-task-example/)
+- [Apache Samza Task List Example](https://apis.io/examples/apache-samza/apache-samza-task-list-example/)
+
+#### Collections (3)
+
+Postman and Open Collection request collections.
+
+- [Apache Samza REST Checkpoints API](https://apis.io/collections/apache-samza/open-apache-samza-checkpoints-api/)
+- [Apache Samza REST Checkpoints Jobs API](https://apis.io/collections/apache-samza/open-apache-samza-jobs-api/)
+- [Apache Samza REST Checkpoints Tasks API](https://apis.io/collections/apache-samza/open-apache-samza-tasks-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Apache Samza — jsonschema rules](https://apis.io/rules/apache-samza/apache-samza-jsonschema-spectral-rules/)
+- [Apache Samza API Rules](https://apis.io/rules/apache-samza/apache-samza-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apache Samza Domain Security](https://apis.io/security/apache-samza/apache-samza-domain-security/)
+- [Apache Samza Vulnerability Disclosure](https://apis.io/security/apache-samza/apache-samza-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apache Samza Plans Pricing](https://apis.io/plans/apache-samza/apache-samza-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apache Samza Rate Limits](https://apis.io/rate-limits/apache-samza/apache-samza-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apache Samza Finops](https://apis.io/finops/apache-samza/apache-samza-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.apache.org/)
 - [Documentation](https://samza.apache.org/)
-- [SpectralRules](rules/apache-samza-spectral-rules.yml)
-- [Vocabulary](vocabulary/apache-samza-vocabulary.yaml)
-- [NaftikoCapability](capabilities/samza-workflow.yaml)
-- [JSON-LD](json-ld/apache-samza-context.jsonld)
+- [Blog](https://samza.apache.org/blog/)
+- [GitHub](https://github.com/apache/samza)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Kafka Integration | Native Apache Kafka consumer/producer for stream processing |
-| YARN Execution | Runs on Apache YARN for resource management and fault tolerance |
-| Stateful Processing | Local state stores with RocksDB for low-latency stateful computations |
-| Exactly-Once Processing | Transactional state stores for exactly-once semantics |
-| Flexible Deployment | Run on YARN, Kubernetes, or standalone |
-| High Level API | Fluent API and SQL support for stream transformations |
+**Kin Score 25.8** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 47.9 |
+| Contract governance | 27.3 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 7.9 |
 
-| Name | Description |
-|------|-------------|
-| Event Stream Processing | Real-time processing of Kafka event streams |
-| Stateful Aggregations | Windowed aggregations over streaming data |
-| Stream Joins | Join multiple Kafka streams for enrichment |
-| Change Data Capture | Process CDC events from databases in real time |
+**Agent readiness 15.4** — agent-aware
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Apache Kafka | Primary messaging system for Samza input and output streams |
-| Apache YARN | Resource management and job scheduling on Hadoop |
-| Apache Hadoop | HDFS integration for checkpoint storage |
-| RocksDB | Embedded state store for local stateful processing |
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apache-samza/](https://apis.io/providers/apache-samza/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Apache Samza REST API](openapi/apache-samza-rest-api.yaml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apache Samza: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-- [Job](json-schema/apache-samza-job-schema.json)
-- [Task](json-schema/apache-samza-task-schema.json)
-- [Checkpoint](json-schema/apache-samza-checkpoint-schema.json)
-- [And more...](json-schema/)
-
-### JSON Structure
-
-- [Apache Samza JSON Structures](json-structure/)
-
-### JSON-LD
-
-- [Apache Samza Context](json-ld/apache-samza-context.jsonld)
-
-### Examples
-
-- [Apache Samza Examples](examples/)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Stream Processing Workflow](capabilities/samza-workflow.yaml) | Apache Samza | 6 | Data Engineer, Platform Engineer |
-
-## Vocabulary
-
-- [Apache Samza Vocabulary](vocabulary/apache-samza-vocabulary.yaml) — Unified taxonomy mapping stream processing resources, actions, workflows, and personas
-
-## Rules
-
-- [Apache Samza Spectral Rules](rules/apache-samza-spectral-rules.yml) — Rules enforcing Apache Samza API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** info@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apache-samza/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
